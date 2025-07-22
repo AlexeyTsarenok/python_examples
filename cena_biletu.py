@@ -8,30 +8,28 @@ DNI_TYGODNIA = [
     "poniedziałek", "wtorek", "środa", "czwartek", "piątek", "sobota", "niedziela"
 ]
 
-def pobierz_wiek():
+def pobierz_wiek() -> int:
     while True:
         try:
             wiek = int(input("Proszę podać swój wiek: "))
             if wiek > 0:
                 return wiek
-            else:
-                print("Wiek musi być liczbą dodatnią. Spróbuj ponownie.")
+            print("Wiek musi być liczbą dodatnią. Spróbuj ponownie.")
         except ValueError:
             print("To nie jest poprawny wiek. Proszę wpisać liczbę.")
 
-def pobierz_status_studenta():
+def pobierz_status_studenta() -> bool:
     while True:
-        odp = input("Czy jesteś studentem? (tak/nie): ").lower()
-        if odp in ["tak", "nie"]:
+        odp = input("Czy jesteś studentem? (tak/nie): ").strip().lower()
+        if odp in ("tak", "nie"):
             return odp == "tak"
         print("Proszę odpowiedzieć 'tak' lub 'nie'.")
 
-def pobierz_dzien_tygodnia():
-    # Automatycznie pobiera dzień tygodnia z systemu
-    dzien_index = datetime.datetime.today().weekday()  # 0=poniedziałek, 6=niedziela
+def pobierz_dzien_tygodnia() -> str:
+    dzien_index = datetime.datetime.today().weekday()
     return DNI_TYGODNIA[dzien_index]
 
-def oblicz_cene_biletu():
+def oblicz_cene_biletu() -> None:
     print("Witaj w systemie biletowym Multikina!")
     wiek = pobierz_wiek()
     jest_studentem = pobierz_status_studenta()
