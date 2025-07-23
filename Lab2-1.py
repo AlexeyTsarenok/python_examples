@@ -1,6 +1,11 @@
 produkty = ("mleko", "chleb", "masło", "ser", "jabłka", "pomidor", "cukier", "sól", "woda", "jogurt")
+liczba_produktow = 3
 
-def stworz_koszyk(liczba_produktow=3):
+print("Dostępne produkty w sklepie:")
+for produkt in sorted(produkty):
+    print("-", produkt)
+
+def stworz_koszyk():
     koszyk = []
     i = 0
     while i < liczba_produktow:
@@ -16,4 +21,4 @@ koszyk = stworz_koszyk()
 
 print("\nProdukty w koszyku (alfabetycznie):")
 for produkt in sorted(koszyk):
-    print(produkt)
+    print("-", produkt)
