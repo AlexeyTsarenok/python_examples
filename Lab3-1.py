@@ -1,12 +1,8 @@
 ''' Zadanie 1: Licznik liter 
-
 Napisz funkcję licz_litery(tekst), która: 
-
-przyjmie string, 
-
-zwróci słownik z liczbą wystąpień każdej litery (ignorując wielkość liter i znaki interpunkcyjne), 
-
-wypisze wynik w formie: 
+- przyjmie string, 
+- zwróci słownik z liczbą wystąpień każdej litery (ignorując wielkość liter i znaki interpunkcyjne), 
+- wypisze wynik w formie: 
 
 a: 3 
 b: 1 
