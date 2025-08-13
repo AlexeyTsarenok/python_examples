@@ -7,7 +7,7 @@ app = FastAPI()
 
 DB_NAME = "animals.db"
 
-# 🧬 MODELE
+# MODELE
 
 class Animal(BaseModel):
     name: str
@@ -29,7 +29,7 @@ class AnimalNameUpdate(BaseModel):
             raise ValueError("Name must be at least 2 characters long")
         return v
 
-# 🛠️ INICJALIZACJA BAZY
+# INICJALIZACJA BAZY
 
 def init_db():
     conn = sqlite3.connect(DB_NAME)
@@ -48,7 +48,7 @@ def init_db():
 
 init_db()
 
-# 🔧 ENDPOINTY
+# ENDPOINTY
 
 @app.get("/ping")
 def ping():
